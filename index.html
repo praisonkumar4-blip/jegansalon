@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jegan Salon</title>
+  <link rel="stylesheet" type="text/css" href="./index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <nav>
+    <div class="brand">
+      <div class="logo">JS</div>
+      <h1>Jegan Salon</h1>
+    </div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <ul id="menu">
+      <li onclick="go('home')">Home</li>
+      <li onclick="go('services')">Services</li>
+      <li onclick="go('booking')">Booking</li>
+      <li onclick="go('certificates')">Certificates</li>
+      <li onclick="go('contact')">Contact</li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>Jegan Salon</h1>
+    <p>Style • Beauty • Confidence</p>
+    <div class="shop-logo">JS</div>
+
+
+
+    <h2>Shop Interior</h2>
+    <hr>
+    <div class="slider-container">
+      <button class="slider-btn prev" onclick="prev()">❮</button>
+      <img id="slide">
+      <button class="slider-btn next" onclick="next()">❯</button>
+      <div class="slide-text" id="slideText"></div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <hr>
+
+    <div class="services">
+
+      <div class="card">
+        <img class="service-img" src="https://picsum.photos/300?1">
+        <h3>Hair Cut</h3>
+        <div class="price">₹300</div>
+        <div class="service-duration">⏱ 45 mins</div>
+        <button class="book-btn" onclick="goBooking('Hair Cut')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img class="service-img" src="https://picsum.photos/300?2">
+        <h3>Beard Styling</h3>
+        <div class="price">₹250</div>
+        <div class="service-duration">⏱ 45 mins</div>
+        <button class="book-btn" onclick="goBooking('Beard Styling')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img class="service-img" src="https://picsum.photos/300?3">
+        <h3>Hair Coloring</h3>
+        <div class="price">₹600</div>
+        <div class="service-duration">⏱ 45 mins</div>
+        <button class="book-btn" onclick="goBooking('Hair Coloring')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img class="service-img" src="https://picsum.photos/300?4">
+        <h3>Facial</h3>
+        <div class="price">₹500</div>
+        <div class="service-duration">⏱ 45 mins</div>
+        <button class="book-btn" onclick="goBooking('Facial')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img class="service-img" src="https://picsum.photos/300?5">
+        <h3>Head Massage</h3>
+        <div class="price">₹200</div>
+        <div class="service-duration">⏱ 45 mins</div>
+        <button class="book-btn" onclick="goBooking('Head Massage')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img class="service-img" src="https://picsum.photos/300?6">
+        <h3>Hair Wash</h3>
+        <div class="price">₹150</div>
+        <div class="service-duration">⏱ 45 mins</div>
+        <button class="book-btn" onclick="goBooking('Hair Wash')">Book Now</button>
+      </div>
+
+      <div class="card">
+        <img class="service-img" src="https://picsum.photos/300?7">
+        <h3>Kids Cut</h3>
+        <div class="price">₹180</div>
+        <div class="service-duration">⏱ 45 mins</div>
+        <button class="book-btn" onclick="goBooking('Kids Cut')">Book Now</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section>
+    <h2>Book Appointment</h2>
+    <hr>
+
+    <form id="bookingForm">
+
+      <input name="user_name" required placeholder="Your Name">
+      <input name="user_phone" required placeholder="Phone Number">
+
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option>Hair Cut</option>
+        <option>Beard Styling</option>
+        <option>Facial</option>
+        <option>Hair Coloring</option>
+        <option>Head Massage</option>
+        <option>Hair Wash</option>
+        <option>Kids Cut</option>
+      </select>
+
+      <input type="date" name="date" id="bookingDate" required>
+
+      <!-- SLOT AREA -->
+      <div id="timeSlots" class="slot-grid"></div>
+
+      <input type="hidden" id="selectedTime">
+
+      <button type="submit">Book via WhatsApp</button>
+    </form>
+  </section>
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <hr>
+    <div class="certificates">
+      <div class="cert"><img src="https://picsum.photos/200?1">
+        <p>Professional Hair Styling</p>
+      </div>
+      <div class="cert"><img src="https://picsum.photos/200?2">
+        <p>Advanced Beard Grooming</p>
+      </div>
+      <div class="cert"><img src="https://picsum.photos/200?3">
+        <p>Skin Care Certification</p>
+      </div>
+      <div class="cert"><img src="https://picsum.photos/200?4">
+        <p>Salon Hygiene Training</p>
+      </div>
+      <div class="cert"><img src="https://picsum.photos/200?5">
+        <p>Customer Service Excellence</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <hr>
+    <form id="contactForm">
+      <input name="user_name" required placeholder="Your Name">
+      <input name="user_email" type="email" required placeholder="Email">
+      <textarea name="message" required placeholder="Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3 id="popupText">Success ✅</h3>
+      <button onclick="popup.style.display='none'">OK</button>
+    </div>
+  </div>
+
+  <script>
+    /* Slider */
+    const images = [
+      { img: "https://picsum.photos/900/350?1", text: "Modern Interior" },
+      { img: "https://picsum.photos/900/350?2", text: "Comfortable Lounge" },
+      { img: "https://picsum.photos/900/350?3", text: "Hygienic Setup" },
+      { img: "https://picsum.photos/900/350?4", text: "Professional Area" },
+      { img: "https://picsum.photos/900/350?5", text: "Relaxing Space" }
+    ];
+    let index = 0;
+    slide.src = images[0].img;
+    slideText.innerText = images[0].text;
+    function next() { index = (index + 1) % images.length; update(); }
+    function prev() { index = (index - 1 + images.length) % images.length; update(); }
+    function update() { slide.src = images[index].img; slideText.innerText = images[index].text }
+
+    /* Navigation */
+    function toggleMenu() { menu.classList.toggle("show") }
+    function go(id) { menu.classList.remove("show"); document.getElementById(id).scrollIntoView({ behavior: "smooth" }) }
+    /* OWNER WHATSAPP NUMBER (CHANGE THIS) */
+    const OWNER_NUMBER = "+918438642645"; // countrycode + number
+
+    /* TEMPORARY BOOKED SLOTS */
+    let bookedSlots = [
+      { date: "2026-02-05", time: "09:00" },
+      { date: "2026-02-05", time: "09:45" },
+      { date: "2026-02-06", time: "10:30" }
+    ];
+
+    const dateInput = document.getElementById("bookingDate");
+    const slotBox = document.getElementById("timeSlots");
+    const selectedTime = document.getElementById("selectedTime");
+
+    const START = 9 * 60;
+    const END = 18 * 60;
+    const STEP = 45;
+
+    /* GENERATE TIME SLOTS */
+    function loadSlots(date) {
+      slotBox.innerHTML = "";
+      selectedTime.value = "";
+
+      for (let t = START; t <= END; t += STEP) {
+        const h = String(Math.floor(t / 60)).padStart(2, "0");
+        const m = String(t % 60).padStart(2, "0");
+        const time = `${h}:${m}`;
+
+        const div = document.createElement("div");
+        div.className = "slot";
+        div.innerText = time;
+
+        const booked = bookedSlots.some(s => s.date === date && s.time === time);
+
+        if (booked) {
+          div.classList.add("booked");
+        } else {
+          div.onclick = () => {
+            document.querySelectorAll(".slot").forEach(s => s.classList.remove("selected"));
+            div.classList.add("selected");
+            selectedTime.value = time;
+          };
+        }
+        slotBox.appendChild(div);
+      }
+    }
+
+    dateInput.addEventListener("change", () => loadSlots(dateInput.value));
+
+    /* SUBMIT BOOKING */
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = this.user_name.value;
+      const phone = this.user_phone.value;
+      const service = this.service.value;
+      const date = this.date.value;
+      const time = selectedTime.value;
+
+      if (!time) {
+        alert("❗ Please select a time slot");
+        return;
+      }
+
+      if (bookedSlots.some(s => s.date === date && s.time === time)) {
+        alert("❌ This slot is already booked");
+        loadSlots(date);
+        return;
+      }
+
+      bookedSlots.push({ date, time });
+
+      alert("✅ Booking confirmed! Redirecting to WhatsApp");
+
+      const msg =
+        `Hello Jegan Salon 👋
+I want to book an appointment.
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+💈 Service: ${service}
+📅 Date: ${date}
+⏰ Time: ${time}`;
+
+      window.open(
+        `https://wa.me/${+918438642645}?text=${encodeURIComponent(msg)}`,
+        "_blank"
+      );
+
+      this.reset();
+      slotBox.innerHTML = "";
+    });
+  </script>
+
+  <!-- CONTACT DETAILS -->
+<section id="contact-details">
+  <h2>Contact Details</h2>
+  <hr>
+
+  <div class="contact-box">
+    <div class="contact-item">
+      📞 <span>+91 84386 42645</span>
+    </div>
+
+    <div class="contact-item">
+      📍 <span>Jegan Salon, Main Road, Tamil Nadu, India</span>
+    </div>
+
+    <div class="contact-item">
+      ✉️ <span>jegansalon@gmail.com</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Jegan Salon. All Rights Reserved.</p>
+  <p>Created by <strong>Praison</strong></p>
+  <p class="secure">🔒 Secured & Maintained by Praison Web Solutions</p>
+</footer>
+
+
+</body>
+
+</html>
