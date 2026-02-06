@@ -24,7 +24,7 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
+  
   <section id="home" class="hero">
     <h1>Jegan Salon</h1>
     <p>Style • Beauty • Confidence</p>
@@ -131,7 +131,7 @@
 
       <input type="date" name="date" id="bookingDate" required>
 
-      <!-- SLOT AREA -->
+      
       <div id="timeSlots" class="slot-grid"></div>
 
       <input type="hidden" id="selectedTime">
@@ -181,7 +181,7 @@
   </div>
 
   <script>
-    /* Slider */
+    
     const images = [
       { img: "https://picsum.photos/900/350?1", text: "Modern Interior" },
       { img: "https://picsum.photos/900/350?2", text: "Comfortable Lounge" },
@@ -196,13 +196,14 @@
     function prev() { index = (index - 1 + images.length) % images.length; update(); }
     function update() { slide.src = images[index].img; slideText.innerText = images[index].text }
 
-    /* Navigation */
+    
+    
     function toggleMenu() { menu.classList.toggle("show") }
     function go(id) { menu.classList.remove("show"); document.getElementById(id).scrollIntoView({ behavior: "smooth" }) }
-    /* OWNER WHATSAPP NUMBER (CHANGE THIS) */
-    const OWNER_NUMBER = "+918438642645"; // countrycode + number
+    
+    const OWNER_NUMBER = "+918438642645";
 
-    /* TEMPORARY BOOKED SLOTS */
+    
     let bookedSlots = [
       { date: "2026-02-05", time: "09:00" },
       { date: "2026-02-05", time: "09:45" },
@@ -217,7 +218,6 @@
     const END = 18 * 60;
     const STEP = 45;
 
-    /* GENERATE TIME SLOTS */
     function loadSlots(date) {
       slotBox.innerHTML = "";
       selectedTime.value = "";
@@ -248,7 +248,6 @@
 
     dateInput.addEventListener("change", () => loadSlots(dateInput.value));
 
-    /* SUBMIT BOOKING */
     document.getElementById("bookingForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -293,7 +292,8 @@ I want to book an appointment.
     });
   </script>
 
-  <!-- CONTACT DETAILS -->
+  
+  
 <section id="contact-details">
   <h2>Contact Details</h2>
   <hr>
@@ -313,7 +313,7 @@ I want to book an appointment.
   </div>
 </section>
 
-<!-- FOOTER -->
+
 <footer>
   <p>© 2026 Jegan Salon. All Rights Reserved.</p>
   <p>Created by <strong>Praison</strong></p>
